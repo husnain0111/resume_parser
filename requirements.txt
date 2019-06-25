@@ -1,0 +1,56 @@
+attrs==19.1.0
+blis==0.2.4
+certifi==2019.6.16
+chardet==3.0.4
+cymem==2.0.2
+docx2txt==0.7
+en-core-web-sm==2.1.0
+idna==2.8
+jsonschema==3.0.1
+murmurhash==1.0.2
+nltk==3.4.3
+numpy==1.16.4
+pandas==0.24.2
+pdfminer.six==20181108
+plac==0.9.6
+preshed==2.0.1
+pycryptodome==3.8.2
+pyrsistent==0.15.2
+python-dateutil==2.8.0
+pytz==2019.1
+requests==2.22.0
+six==1.12.0
+sortedcontainers==2.1.0
+spacy==2.1.4
+srsly==0.0.7
+thinc==7.0.4
+tqdm==4.32.2
+urllib3==1.25.3
+wasabi==0.2.2
+
+
+pip install pdfminer        # python 2
+pip install pdfminer.six    # python 3
+pip install docx2txt
+```
+
+- For NLP operations we use spacy and nltk. Install them using:
+
+```bash
+# spaCy
+pip install spacy
+python -m spacy download en_core_web_sm
+
+# nltk
+pip install nltk
+python -m nltk nltk.download('words')
+
+For extracting data from a single resume file, use
+
+python resume_parser/cli.py -f <resume_file_path>
+For extracting data from several resumes, place them in a directory and then execute
+
+python resume_parser/cli.py -d <resume_directory_path>
+For extracting data from remote resumes, execute
+
+python resume_parser/cli.py -r <path_to_remote_resume_file>
